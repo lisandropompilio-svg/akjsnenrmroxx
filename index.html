@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1492: El Viaje que Cambió el Mundo</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Google Font: Serif for headings, Sans for body -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+sepia: {
+50: '#FAF8F5',
+100: '#F3EFE6',
+200: '#E5DCCB',
+700: '#5C3A21',
+800: '#3D2412',
+900: '#261408',
+},
+amberGold: '#D97706',
+terraCotta: '#9A3412',
+},
+fontFamily: {
+cinzel: ['Cinzel', 'serif'],
+sans: ['Inter', 'sans-serif'],
+}
+}
+}
+}
+</script>
+<style>
+.gradient-header {
+background: linear-gradient(135deg, #261408 0%, #3D2412 100%);
+}
+.quiz-card {
+background-color: #5C3A21;
+}
+.quiz-option {
+background-color: rgba(255, 255, 255, 0.08);
+transition: all 0.2s ease;
+}
+.quiz-option:hover:not(.disabled) {
+background-color: rgba(255, 255, 255, 0.18);
+}
+.quiz-option.correct {
+background-color: #15803d !important;
+color: #ffffff;
+border-color: #4ade80 !important;
+}
+.quiz-option.incorrect {
+background-color: #b91c1c !important;
+color: #ffffff;
+border-color: #f87171 !important;
+}
+</style>
+</head>
+<body class="bg-sepia-50 text-sepia-900 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-amberGold selection:text-white">
+<!-- HEADER / NAVIGATION BAR -->
+<header class="gradient-header text-amber-100 sticky top-0 z-50 shadow-xl border-b border-amber-900/40">
+<div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+<a href="#inicio" class="flex items-center space-x-3 group">
+<div class="w-10 h-10 rounded-full bg-amberGold flex items-center justify-center text-sepia-900 shadow-md group-hover:scale-105 transition-transform">
+<i class="fa-solid fa-compass text-xl"></i>
+</div>
+<div>
+<h1 class="font-cinzel text-lg md:text-xl font-bold tracking-wider leading-tight text-amber-200">1492: EL VIAJE QUE CAMBIÓ</h1>
+<p class="font-cinzel text-xs md:text-sm font-semibold tracking-widest text-amber-400/90">EL MUNDO</p>
+</div>
+</a>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex space-x-6 text-sm font-medium text-amber-200/80">
+<a href="#inicio" class="hover:text-amber-400 transition-colors">Inicio</a>
+<a href="#antecedentes" class="hover:text-amber-400 transition-colors">1. Antecedentes</a>
+<a href="#viajes" class="hover:text-amber-400 transition-colors">2. Los Viajes</a>
+<a href="#impacto" class="hover:text-amber-400 transition-colors">3. Impacto</a>
+<a href="#cuestionario" class="hover:text-amber-400 transition-colors">Cuestionario</a>
+</nav>
+<!-- Mobile Menu Button -->
+<button id="menu-btn" class="md:hidden text-amber-200 hover:text-white p-2 focus:outline-none" aria-label="Abrir Menú">
+<i class="fa-solid fa-bars text-2xl"></i>
+</button>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobile-menu" class="hidden md:hidden bg-sepia-900 border-t border-amber-900/50 px-4 py-3 space-y-3 font-medium text-amber-100">
+<a href="#inicio" class="block py-1 hover:text-amberGold text-sm">Inicio</a>
+<a href="#antecedentes" class="block py-1 hover:text-amberGold text-sm">1. Antecedentes y Motivaciones</a>
+<a href="#viajes" class="block py-1 hover:text-amberGold text-sm">2. Los Cuatro Viajes</a>
+<a href="#impacto" class="block py-1 hover:text-amberGold text-sm">3. Encuentro e Impacto</a>
+<a href="#cuestionario" class="block py-1 hover:text-amberGold text-sm">Cuestionario Interactivo</a>
+<a href="#fuentes" class="block py-1 hover:text-amberGold text-sm">Fuentes de Consulta</a>
+</div>
+</header>
+<!-- MAIN CONTENT -->
+<main class="max-w-3xl mx-auto px-4 py-8 space-y-12 flex-grow">
+<!-- BANNER DE RECURSO EDUCATIVO -->
+<div id="inicio" class="text-center space-y-3 border-b border-sepia-200 pb-6">
+<span class="inline-block px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold tracking-widest rounded-full uppercase border border-amber-300/60">
+Recurso Educativo para Secundaria
+</span>
+<h2 class="font-cinzel text-2xl md:text-3xl font-extrabold text-sepia-800 tracking-wide">
+LA LLEGADA DE CRISTÓBAL COLÓN A AMÉRICA
+</h2>
+<p class="text-sepia-700 leading-relaxed text-base md:text-lg max-w-2xl mx-auto">
+El 12 de octubre de 1492, una expedición capitaneada por Cristóbal Colón llegó a las islas del Caribe, marcando el inicio de un contacto permanente entre Europa y América. Este acontecimiento histórico transformó la geografía, el comercio, las culturas y la sociedad a escala global.
+</p>
+</div>
+<!-- SECCIÓN 1: ANTECEDENTES Y MOTIVACIONES -->
+<section id="antecedentes" class="space-y-6 scroll-mt-20">
+<div class="flex items-start space-x-3">
+<span class="w-8 h-8 rounded-full bg-sepia-800 text-amber-300 font-bold flex items-center justify-center shrink-0 shadow-md">1</span>
+<h3 class="font-cinzel text-xl md:text-2xl font-bold text-sepia-900 tracking-wide">
+EL CONTEXTO Y LAS MOTIVACIONES DEL VIAJE
+</h3>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-sepia-200 space-y-4 text-sepia-800 leading-relaxed">
+<p>
+Hacia fines del siglo XV, las rutas comerciales terrestres entre Europa y Asia (la famosa <strong>Ruta de las Especias</strong>) quedaron bloqueadas tras la caída de Constantinopla en 1453. Esto obligó a los reinos europeos a buscar nuevas rutas marítimas hacia "Las Indias".
+</p>
+<p>
+El navegante genovés Cristóbal Colón sostenía la teoría de que era posible llegar a Asia navegando hacia el oeste a través del Océano Atlántico. Apoyado por los Reyes Católicos de España (Isabel de Castilla y Fernando de Aragón), Colón partió del Puerto de Palos en agosto de 1492 con tres naves: <strong>La Niña</strong>, <strong>La Pinta</strong> y <strong>La Santa María</strong>.
+</p>
+</div>
+<!-- IMAGEN REAL 1: CARABELAS DE COLÓN -->
+<div class="bg-white p-4 rounded-2xl shadow-sm border border-sepia-200 space-y-3">
+<div class="w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-inner bg-sepia-900 relative">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Santa-Maria.jpg" alt="Réplica de la Carabela La Santa María" class="w-full h-full object-cover" />
+</div>
+<div class="flex items-start space-x-2 text-xs md:text-sm text-sepia-700 italic">
+<i class="fa-solid fa-ship text-amberGold mt-1"></i>
+<p><strong>Imagen 1:</strong> Reconstrucción histórica a escala real de La Santa María navegando en mar abierto.</p>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 2: LOS CUATRO VIAJES -->
+<section id="viajes" class="space-y-6 scroll-mt-20">
+<div class="flex items-start space-x-3">
+<span class="w-8 h-8 rounded-full bg-sepia-800 text-amber-300 font-bold flex items-center justify-center shrink-0 shadow-md">2</span>
+<h3 class="font-cinzel text-xl md:text-2xl font-bold text-sepia-900 tracking-wide">
+LOS CUATRO VIAJES DE COLÓN (1492 - 1504)
+</h3>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-sepia-200 text-sepia-800 leading-relaxed">
+<p class="mb-4">
+Tras más de dos meses de navegación incierta, el 12 de octubre de 1492 la tripulación avistó tierra: desembarcaron en la isla de <strong>Guanahani</strong> (en las actuales Bahamas), a la que bautizaron como <em>San Salvador</em>. Colón realizó un total de cuatro viajes transatlánticos explorando el Caribe y las costas de América Central.
+</p>
+<!-- IMAGEN REAL 2: MAPA HISTÓRICO REAL DE LOS 4 VIAJES -->
+<div class="my-6 p-2 bg-amber-50/50 rounded-xl border border-amber-200/80">
+<div class="w-full h-64 md:h-80 bg-amber-100 rounded-lg overflow-hidden relative shadow-inner">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Viajes_de_colon.svg/1024px-Viajes_de_colon.svg.png" alt="Mapa interactivo de los 4 viajes de Colón" class="w-full h-full object-contain bg-slate-50" />
+</div>
+<div class="flex items-start space-x-2 text-xs md:text-sm text-sepia-700 italic mt-3">
+<i class="fa-solid fa-map-location-dot text-amberGold mt-1"></i>
+<p><strong>Imagen 2:</strong> Mapa cartográfico histórico detallado con los trazados de las rutas de los cuatro viajes de Cristóbal Colón.</p>
+</div>
+</div>
+<!-- Lista de los 4 Viajes -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+<div class="p-4 bg-sepia-50 rounded-xl border border-sepia-200">
+<h4 class="font-cinzel font-bold text-amber-900 mb-1">1.º Viaje (1492-1493)</h4>
+<p class="text-sm text-sepia-700">Llegada a Guanahani, Cuba y La Española. Pérdida de la nave capitana Santa María.</p>
+</div>
+<div class="p-4 bg-sepia-50 rounded-xl border border-sepia-200">
+<h4 class="font-cinzel font-bold text-amber-900 mb-1">2.º Viaje (1493-1496)</h4>
+<p class="text-sm text-sepia-700">Exploración de las Antillas Menores, Puerto Rico y Jamaica. Inicio de la colonización.</p>
+</div>
+<div class="p-4 bg-sepia-50 rounded-xl border border-sepia-200">
+<h4 class="font-cinzel font-bold text-amber-900 mb-1">3.º Viaje (1498-1500)</h4>
+<p class="text-sm text-sepia-700">Llegada a la desembocadura del río Orinoco (costas de Venezuela en América del Sur).</p>
+</div>
+<div class="p-4 bg-sepia-50 rounded-xl border border-sepia-200">
+<h4 class="font-cinzel font-bold text-amber-900 mb-1">4.º Viaje (1502-1504)</h4>
+<p class="text-sm text-sepia-700">Recorrido por las costas de América Central (Honduras, Nicaragua, Costa Rica y Panamá).</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 3: EL ENCUENTRO Y SUS CONSECUENCIAS -->
+<section id="impacto" class="space-y-6 scroll-mt-20">
+<div class="flex items-start space-x-3">
+<span class="w-8 h-8 rounded-full bg-sepia-800 text-amber-300 font-bold flex items-center justify-center shrink-0 shadow-md">3</span>
+<h3 class="font-cinzel text-xl md:text-2xl font-bold text-sepia-900 tracking-wide">
+EL ENCUENTRO DE DOS MUNDOS Y SUS CONSECUENCIAS
+</h3>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-sepia-200 space-y-4 text-sepia-800 leading-relaxed">
+<p>
+La llegada europea a América generó un profundo impacto socio-cultural, biológico y económico en ambos continentes:
+</p>
+<ul class="space-y-3 pl-2">
+<li class="flex items-start space-x-3">
+<i class="fa-solid fa-wheat-stroke text-amberGold mt-1"></i>
+<span><strong>Intercambio Global:</strong> Se intercambiaron alimentos fundamentales (maíz, papa, cacao y tomate fueron a Europa; trigo, café y ganado vinieron a América).</span>
+</li>
+<li class="flex items-start space-x-3">
+<i class="fa-solid fa-users text-amberGold mt-1"></i>
+<span><strong>Impacto en las Poblaciones Indígenas:</strong> La introducción de nuevas enfermedades e imposiciones coloniales causaron un fuerte declive demográfico indígena.</span>
+</li>
+<li class="flex items-start space-x-3">
+<i class="fa-solid fa-earth-americas text-amberGold mt-1"></i>
+<span><strong>Mundialización:</strong> Se inició la configuración de una economía global integrada y el auge de imperios ultramarinos.</span>
+</li>
+</ul>
+</div>
+<!-- IMAGEN REAL 3: CUADRO HISTÓRICO REAL -->
+<div class="bg-white p-4 rounded-2xl shadow-sm border border-sepia-200 space-y-3">
+<div class="w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-inner bg-amber-950 relative">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Primer_desembarco_de_Col%C3%B3n_en_Am%C3%A9rica.jpg/1024px-Primer_desembarco_de_Col%C3%B3n_en_Am%C3%A9rica.jpg" alt="Primer desembarco de Cristóbal Colón en América por Dióscoro Puebla" class="w-full h-full object-cover" />
+</div>
+<div class="flex items-start space-x-2 text-xs md:text-sm text-sepia-700 italic">
+<i class="fa-solid fa-palette text-amberGold mt-1"></i>
+<p><strong>Imagen 3:</strong> Óleo sobre lienzo <em>Primer desembarco de Cristóbal Colón en América</em> (1862) pintado por el artista español Dióscoro Puebla (Colección del Museo del Prado, Madrid).</p>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 4: CUESTIONARIO INTERACTIVO DINÁMICO (PREGUNTA A PREGUNTA) -->
+<section id="cuestionario" class="space-y-6 scroll-mt-20">
+<div class="quiz-card p-6 md:p-8 rounded-3xl text-amber-50 shadow-xl border border-amber-900/60">
+<div class="flex items-center justify-between mb-4 pb-4 border-b border-amber-700/50">
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-amber-300">Comprobá lo Aprendido</span>
+<h3 class="font-cinzel text-xl md:text-2xl font-extrabold text-amber-100 flex items-center gap-2 mt-1">
+TRIVIA INTERACTIVA
+</h3>
+</div>
+<i class="fa-solid fa-trophy text-3xl text-amberGold"></i>
+</div>
+<!-- Barra de Progreso -->
+<div class="w-full bg-sepia-900/60 rounded-full h-3 mb-6 overflow-hidden border border-amber-800/50">
+<div id="progress-bar" class="bg-amberGold h-full transition-all duration-300" style="width: 16%;"></div>
+</div>
+<!-- Contenedor del Juego -->
+<div id="quiz-container" class="space-y-6">
+<div class="flex items-center justify-between text-xs text-amber-300 font-bold uppercase tracking-wider">
+<span id="question-number">Pregunta 1 de 6</span>
+<span id="score-counter">Puntos: 0</span>
+</div>
+<!-- Texto de la Pregunta -->
+<div id="question-box" class="bg-sepia-900/50 p-5 rounded-2xl border border-amber-800/40">
+<h4 id="question-text" class="font-semibold text-lg text-amber-100 leading-snug">
+Cargando pregunta...
+</h4>
+</div>
+<!-- Opciones de Respuesta -->
+<div id="options-box" class="space-y-3">
+<!-- Opciones generadas por JS -->
+</div>
+<!-- Mensaje de Retroalimentación -->
+<div id="feedback-box" class="hidden p-4 rounded-xl text-center font-bold text-sm"></div>
+<!-- Botón Siguiente Pregunta -->
+<div id="next-btn-container" class="hidden text-center pt-2">
+<button id="next-btn" onclick="siguientePregunta()" class="px-8 py-3 bg-amberGold hover:bg-amber-600 text-sepia-900 font-bold text-base rounded-full shadow-lg transition-transform transform active:scale-95 inline-flex items-center gap-2">
+<span>Siguiente Pregunta</span> <i class="fa-solid fa-arrow-right"></i>
+</button>
+</div>
+</div>
+<!-- Resumen Final del Quiz -->
+<div id="result-screen" class="hidden space-y-6 text-center py-6">
+<div class="w-20 h-20 mx-auto rounded-full bg-amberGold flex items-center justify-center text-sepia-900 text-3xl shadow-lg">
+<i class="fa-solid fa-award"></i>
+</div>
+<h4 class="font-cinzel text-2xl font-bold text-amber-100">¡Trivia Completada!</h4>
+<p id="final-score-text" class="text-lg text-amber-200 leading-relaxed"></p>
+<button onclick="reiniciarQuiz()" class="px-8 py-3 bg-amberGold hover:bg-amber-600 text-sepia-900 font-bold text-base rounded-full shadow-lg transition-transform transform active:scale-95 inline-flex items-center gap-2">
+<i class="fa-solid fa-rotate-right"></i> Intentar de nuevo
+</button>
+</div>
+</div>
+</section>
+<!-- FUENTES DE CONSULTA -->
+<section id="fuentes" class="space-y-4 scroll-mt-20">
+<h3 class="font-cinzel text-lg md:text-xl font-bold text-sepia-900 border-b border-sepia-200 pb-2 flex items-center gap-2">
+<i class="fa-solid fa-book-bookmark text-amberGold"></i> FUENTES CONSULTADAS Y BIBLIOGRAFÍA HISTÓRICA
+</h3>
+<div class="bg-white p-5 rounded-2xl border border-sepia-200 space-y-3 text-sm text-sepia-800">
+<p>
+<strong>1. Colón, Cristóbal.</strong> (1492-1493). <em>Diario de a bordo: Relación del primer viaje a las Indias</em>. Edición paleográfica y crítica establecida por Fray Bartolomé de las Casas en su «Historia de las Indias». Archivo General de Indias, Sevilla, España. Signatura: Patronato, 8, N. 1-2.
+</p>
+<p>
+<strong>2. Elliott, John H.</strong> (2000). <em>La España Imperial (1469-1714)</em> (9.ª edición revisada y ampliada). Editorial Crítica, Barcelona. ISBN: 978-84-8432-057-9. Capítulo III: "La Empresa de las Indias", págs. 65-82.
+</p>
+<p>
+<strong>3. Thomas, Hugh.</strong> (2003). <em>El imperio español: De Colón a Magallanes</em>. Editorial Planeta, Madrid. ISBN: 978-84-0804-874-0. Sección Primera: "Los viajes de Descubrimiento", págs. 85-114.
+</p>
+</div>
+</section>
+<!-- CRÉDITOS Y TRABAJO FINAL -->
+<section class="bg-gradient-to-r from-sepia-800 to-sepia-900 text-amber-100 p-6 rounded-2xl shadow-md border border-amber-900/50 space-y-3 text-center md:text-left">
+<h4 class="font-cinzel font-bold text-lg text-amber-300">Trabajo Final Trimestral - Robótica Educativa</h4>
+<div class="space-y-1 text-sm text-amber-200/90">
+<p><strong>Estudiante:</strong> Lisandro Antezana</p>
+<p><strong>Docente:</strong> Patricio Alberto Rodríguez</p>
+</div>
+<p class="text-xs text-amber-400/70 pt-2 border-t border-amber-700/40 italic">
+<strong>Nota:</strong> Esta página web fue diseñada y desarrollada con la asistencia de la Inteligencia Artificial Google Gemini como herramienta educativa, con posterior revisión, organización y verificación de contenidos.
+</p>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-sepia-900 text-amber-200/60 py-6 text-center text-xs border-t border-amber-900/40">
+<div class="max-w-4xl mx-auto px-4 space-y-2">
+<p>© 1492: El Viaje que Cambió el Mundo — Recurso Didáctico de Secundaria</p>
+<div class="flex justify-center space-x-4">
+<a href="#" class="hover:text-amber-400">Denunciar contenido inapropiado</a>
+<span>•</span>
+<a href="#" class="hover:text-amber-400">Probar Pizarra de Gemini</a>
+</div>
+</div>
+</footer>
+<!-- JAVASCRIPT LOGIC -->
+<script>
+// Toggle Mobile Menu
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+menuBtn.addEventListener('click', () => {
+mobileMenu.classList.toggle('hidden');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+link.addEventListener('click', () => {
+mobileMenu.classList.add('hidden');
+});
+});
+// BANCO DE PREGUNTAS DINÁMICAS
+const preguntas = [
+{
+pregunta: "¿En qué año llegó la expedición de Cristóbal Colón a tierras americanas?",
+opciones: ["1453", "1492", "1504"],
+correcta: 1
+},
+{
+pregunta: "¿Cuál era el objetivo principal de Colón al navegar hacia el oeste?",
+opciones: [
+"Encontrar una nueva ruta comercial hacia las Indias (Asia).",
+"Demostrar que la Tierra era plana.",
+"Conquistar exclusivamente el continente africano."
+],
+correcta: 0
+},
+{
+pregunta: "¿Cuántos viajes transatlánticos realizó Colón en total hacia América?",
+opciones: ["Únicamente un viaje.", "Tres viajes.", "Cuatro viajes."],
+correcta: 2
+},
+{
+pregunta: "¿Cómo se llamaba la primera isla donde desembarcaron en 1492 (actuales Bahamas)?",
+opciones: ["Guanahani (San Salvador)", "La Española", "Puerto Rico"],
+correcta: 0
+},
+{
+pregunta: "¿Qué importante acontecimiento histórico motivó la búsqueda de nuevas rutas náuticas en 1453?",
+opciones: ["La caída de Constantinopla", "La invención de la imprenta", "La pérdida de La Santa María"],
+correcta: 0
+},
+{
+pregunta: "¿Cuáles de los siguientes alimentos llegaron a Europa gracias al intercambio global tras 1492?",
+opciones: ["Trigo y café", "Maíz, papa y cacao", "Arroz y cebada"],
+correcta: 1
+}
+];
+let preguntaActual = 0;
+let puntaje = 0;
+let respondido = false;
+function cargarPregunta() {
+respondido = false;
+const q = preguntas[preguntaActual];
+document.getElementById('question-number').textContent = Pregunta ${preguntaActual + 1} de ${preguntas.length};
+document.getElementById('score-counter').textContent = Puntos: ${puntaje};
+document.getElementById('question-text').textContent = ${preguntaActual + 1}. ${q.pregunta};
+// Actualizar Barra de Progreso
+const progress = ((preguntaActual + 1) / preguntas.length) * 100;
+document.getElementById('progress-bar').style.width = ${progress}%;
+const optionsBox = document.getElementById('options-box');
+optionsBox.innerHTML = '';
+q.opciones.forEach((opcion, index) => {
+const btn = document.createElement('button');
+btn.className = 'quiz-option w-full text-left p-4 rounded-xl border border-amber-700/40 text-amber-100 flex items-center justify-between font-medium cursor-pointer';
+btn.innerHTML = <span>${String.fromCharCode(97 + index)}) ${opcion}</span> <i class="fa-regular fa-circle text-amber-400"></i>;
+btn.onclick = () => seleccionarOpcion(index, btn);
+optionsBox.appendChild(btn);
+});
+document.getElementById('feedback-box').className = 'hidden';
+document.getElementById('next-btn-container').classList.add('hidden');
+}
+function seleccionarOpcion(indiceSeleccionado, elementoBtn) {
+if (respondido) return;
+respondido = true;
+const q = preguntas[preguntaActual];
+const opcionesBtns = document.querySelectorAll('.quiz-option');
+opcionesBtns.forEach(btn => btn.classList.add('disabled'));
+const feedback = document.getElementById('feedback-box');
+feedback.classList.remove('hidden');
+if (indiceSeleccionado === q.correcta) {
+puntaje += 10;
+elementoBtn.classList.add('correct');
+elementoBtn.querySelector('i').className = 'fa-solid fa-circle-check text-white';
+feedback.className = 'p-4 rounded-xl text-center font-bold text-sm bg-emerald-600/30 text-emerald-200 border border-emerald-500/50';
+feedback.innerHTML = '<i class="fa-solid fa-check mr-2"></i> ¡Correcto! Excelente respuesta.';
+} else {
+elementoBtn.classList.add('incorrect');
+elementoBtn.querySelector('i').className = 'fa-solid fa-circle-xmark text-white';
+// Mostrar también la opción correcta
+opcionesBtns[q.correcta].classList.add('correct');
+feedback.className = 'p-4 rounded-xl text-center font-bold text-sm bg-rose-600/30 text-rose-200 border border-rose-500/50';
+feedback.innerHTML = <i class="fa-solid fa-xmark mr-2"></i> Respuesta incorrecta. La opción correcta era: <strong>${q.opciones[q.correcta]}</strong>;
+}
+document.getElementById('score-counter').textContent = Puntos: ${puntaje};
+document.getElementById('next-btn-container').classList.remove('hidden');
+}
+function siguientePregunta() {
+preguntaActual++;
+if (preguntaActual < preguntas.length) {
+cargarPregunta();
+} else {
+mostrarResultados();
+}
+}
+function mostrarResultados() {
+document.getElementById('quiz-container').classList.add('hidden');
+const resultScreen = document.getElementById('result-screen');
+resultScreen.classList.remove('hidden');
+const total = preguntas.length;
+const aciertos = puntaje / 10;
+document.getElementById('final-score-text').innerHTML = Obtuviste <strong>${puntaje} puntos</strong> (${aciertos} de ${total} respuestas correctas).<br>${aciertos >= 4 ? '¡Felicitaciones! Has demostrado un gran conocimiento de esta lección.' : 'Te sugerimos repasar el contenido y volver a intentarlo.'};
+}
+function reiniciarQuiz() {
+preguntaActual = 0;
+puntaje = 0;
+document.getElementById('result-screen').classList.add('hidden');
+document.getElementById('quiz-container').classList.remove('hidden');
+cargarPregunta();
+}
+// Iniciar Quiz
+cargarPregunta();
+</script>
+</body>
+</html>
